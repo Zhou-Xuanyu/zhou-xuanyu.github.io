@@ -30,4 +30,4 @@ Email: shwenyew@gmail.com
 1. thoughts on password
 
 ---
-Shared to the few who care about me, yeah, including myself.
+Shared to the few who cares about me, yeah, including myself.
