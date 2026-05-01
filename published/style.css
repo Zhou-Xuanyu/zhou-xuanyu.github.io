@@ -1,70 +1,284 @@
+/* =========================================
+   FONTS
+   @font-face tells the browser where to find
+   each font file and what weight/style it is.
+   ========================================= */
+
 @font-face {
-  font-family: 'Source Code Pro';
-  src: url('fonts/source-code-pro/SourceCodePro-Regular.otf.woff2') format('woff2');
-  font-weight: 400;
-  font-style: normal;
+    font-family: 'Charter';
+    src: url('fonts/charter/charter_regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: 'Source Code Pro';
-  src: url('fonts/source-code-pro/SourceCodePro-It.otf.woff2') format('woff2');
-  font-weight: 400;
-  font-style: italic;
+    font-family: 'Charter';
+    src: url('fonts/charter/charter_italic.woff2') format('woff2');
+    font-weight: 400;
+    font-style: italic;
 }
 
 @font-face {
-  font-family: 'Source Code Pro';
-  src: url('fonts/source-code-pro/SourceCodePro-Bold.otf.woff2') format('woff2');
-  font-weight: 700;
-  font-style: normal;
+    font-family: 'Charter';
+    src: url('fonts/charter/charter_bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: 'Source Code Pro';
-  src: url('fonts/source-code-pro/SourceCodePro-BoldIt.otf.woff2') format('woff2');
-  font-weight: 700;
-  font-style: italic;
+    font-family: 'Charter';
+    src: url('fonts/charter/charter_bold_italic.woff2') format('woff2');
+    font-weight: 700;
+    font-style: italic;
 }
 
 @font-face {
-  font-family: 'Zhuque Fangsong';
-  src: url('fonts/zhuque-fangsong/ZhuqueFangsong-Regular.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
+    font-family: 'Zhuque Fangsong';
+    src: url('fonts/zhuque-fangsong/ZhuqueFangsong-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: 'Charter';
-  src: url('fonts/charter/charter_regular.woff2') format('woff2');
-  font-weight: 400;
-  font-style: normal;
+    font-family: 'IBM Plex Mono';
+    src: url('fonts/ibm-plex-mono/IBMPlexMono-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: 'Charter';
-  src: url('fonts/charter/charter_italic.woff2') format('woff2');
-  font-weight: 400;
-  font-style: italic;
+    font-family: 'IBM Plex Mono';
+    src: url('fonts/ibm-plex-mono/IBMPlexMono-Italic.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
 }
 
 @font-face {
-  font-family: 'Charter';
-  src: url('fonts/charter/charter_bold.woff2') format('woff2');
-  font-weight: 700;
-  font-style: normal;
+    font-family: 'IBM Plex Mono';
+    src: url('fonts/ibm-plex-mono/IBMPlexMono-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: 'Charter';
-  src: url('fonts/charter/charter_bold_italic.woff2') format('woff2');
-  font-weight: 700;
-  font-style: italic;
+    font-family: 'IBM Plex Mono';
+    src: url('fonts/ibm-plex-mono/IBMPlexMono-BoldItalic.ttf') format('truetype');
+    font-weight: 700;
+    font-style: italic;
 }
 
+/* kept in file in case needed later, not used in any selector */
+@font-face {
+    font-family: 'Fira Sans';
+    src: url('fonts/fira-sans/FiraSans-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Fira Sans';
+    src: url('fonts/fira-sans/FiraSans-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Noto Sans SC';
+    src: url('fonts/noto-sans-sc/NotoSansSC-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Noto Sans SC';
+    src: url('fonts/noto-sans-sc/NotoSansSC-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Source Code Pro';
+    src: url('fonts/source-code-pro/SourceCodePro-Regular.otf.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* =========================================
+   VARIABLES
+   define fonts and colors in one place.
+   change here and it applies everywhere.
+   ========================================= */
+:root {
+    --body-font:  'Charter', 'Zhuque Fangsong', serif;
+    --code-font:  'IBM Plex Mono', monospace;
+
+    --color-text:       #1a1a1a; /* near-black, easier on eyes than pure black */
+    --color-muted:      #888;    /* for secondary text */
+    --color-rule:       #d0d0d0; /* for hr lines */
+    --color-bg:         #fafaf8; /* warm off-white background */
+    --color-hover:      #fef2f2; /* link hover tint */
+}
+
+/* =========================================
+   FLUID FONT SIZE
+   font-size on html scales with screen width (vw).
+   everything using rem scales proportionally with it.
+   capped at 22px on wide screens, 17px on small.
+   ========================================= */
+html {
+    font-size: 2.2vw;
+    background: var(--color-bg);
+}
+
+@media (min-width: 1000px) {
+    html { font-size: 22px; }
+}
+
+@media (max-width: 520px) {
+    html { font-size: 17px; }
+}
+
+/* =========================================
+   BODY
+   centered, max width to keep lines readable.
+   antialiasing makes fonts look sharper on mac.
+   ========================================= */
 body {
-  font-family: 'Charter', 'Zhuque Fangsong', serif;
+    font-family: var(--body-font);
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--color-text);
+    background: var(--color-bg);
+    max-width: 1000px;
+    margin: 0 auto;
+    -webkit-font-smoothing: antialiased;
 }
 
-code, pre {
-  font-family: 'Source Code Pro', monospace;
+/* =========================================
+   CONTENT AREA
+   large left margin creates a gutter — like a
+   book margin. content reads in a narrower column
+   on the right side of the page.
+   ========================================= */
+.content {
+    margin-left: 10rem;
+    margin-right: 3rem;
+    padding-top: 4rem;
+    padding-bottom: 14rem;
+}
+
+/* on small screens, collapse the gutter to equal margins */
+@media (max-width: 520px) {
+    .content {
+        margin-left: 1.5rem;
+        margin-right: 1.5rem;
+        padding-top: 2rem;
+        padding-bottom: 5rem;
+    }
+}
+
+/* =========================================
+   HEADINGS
+   h1 is the page title — larger, bold.
+   h2 is a section title — same size as body,
+   bold, with a little extra space above.
+   keeping them close in size to the body text
+   creates a calm, integrated look.
+   ========================================= */
+h1 {
+    font-family: var(--body-font);
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--color-text);
+    margin: 0 0 0.25rem 0;
+}
+
+h2 {
+    font-family: var(--body-font);
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--color-text);
+    margin: 2.5rem 0 0.25rem 0;
+}
+
+/* =========================================
+   HORIZONTAL RULE
+   used after headings as an underline, and
+   also at the bottom as a section divider.
+   h1 + hr and h2 + hr target specifically the
+   hr that immediately follows a heading.
+   ========================================= */
+hr {
+    border: none;
+    border-top: 1px solid var(--color-rule);
+    margin: 1.5rem 0;
+}
+
+/* hr right after a heading — tighter, acts as underline */
+h1 + hr,
+h2 + hr {
+    margin-top: 0.35rem;
+    margin-bottom: 1rem;
+}
+
+/* =========================================
+   PARAGRAPHS
+   ========================================= */
+p {
+    margin: 0 0 0.85em 0;
+}
+
+/* =========================================
+   LINKS
+   inherit text color so they blend in.
+   a thin bottom border acts as a subtle underline.
+   hover adds a warm tint background.
+   ========================================= */
+a {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px solid var(--color-rule);
+    transition: background 0.15s, border-color 0.15s;
+}
+
+a:hover {
+    background: var(--color-hover);
+    border-bottom-color: var(--color-muted);
+    border-radius: 3px;
+}
+
+/* =========================================
+   NAV (back link on subpages)
+   smaller, muted, no underline border.
+   ========================================= */
+nav {
+    margin-bottom: 2.5rem;
+}
+
+nav a {
+    font-size: 0.85rem;
+    color: var(--color-muted);
+    border-bottom: none;
+    letter-spacing: 0.03em;
+}
+
+nav a:hover {
+    color: var(--color-text);
+    background: none;
+}
+
+/* =========================================
+   CODE
+   monospace font, subtle background to
+   distinguish it from body text.
+   ========================================= */
+code,
+pre {
+    font-family: var(--code-font);
+    font-size: 0.87rem;
+    background: #f0f0ee;
+    padding: 0.1em 0.35em;
+    border-radius: 3px;
 }
