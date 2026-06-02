@@ -4,13 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }}</title>
+    <style>
+        /* loader: inlined for first paint before stylesheets load.
+           keep colors in sync with style.css --color-bg / --color-muted */
+        #loader {
+            position: fixed;
+            inset: 0;
+            background: #fafaf8;
+            color: #888;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: serif;
+            font-size: 0.9rem;
+            z-index: 9999;
+            transition: opacity 0.4s ease-out;
+        }
+        #loader.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+    </style>
+    <noscript><style>#loader { display: none !important; }</style></noscript>
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/hljs.css">
     {% if extra_css %}<link rel="stylesheet" href="/{{ extra_css }}">{% endif %}
 </head>
 <body>
+    <div id="loader">Loading…</div>
     <div class="content">
         {{ content }}
     </div>
     <script src="/js/code-lines.js"></script>
+    <script src="/js/loader.js"></script>
 </body>
