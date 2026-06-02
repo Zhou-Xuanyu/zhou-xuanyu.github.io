@@ -1,0 +1,51 @@
+---
+title: Me?
+layout: layouts/base.html
+extra_css: css/index.css
+---
+
+<h1>Me?</h1>
+
+<h2>Reach Me</h2>
+
+<p>
+    Email me, plz.<br>
+    会收到我真诚的回复。
+</p>
+
+<p><a href="mailto:shwenyew@gmail.com">shwenyew@gmail.com</a></p>
+
+<h2>Noise</h2>
+
+<ul>
+    {% for noise in collections.noise %}
+    <li><a href="{{ noise.url }}">{{ noise.data.title }}</a></li>
+    {% endfor %}
+</ul>
+
+<h2>Thoughts</h2>
+
+<ul>
+    {% for thought in collections.thoughts %}
+    <li><a href="{{ thought.url }}">{{ thought.data.title }}</a></li>
+    {% endfor %}
+</ul>
+
+<h2>Miscellaneous</h2>
+
+<p>
+    The all time favorite text editor:
+    <a href="https://github.com/neovim/neovim">Vim(Neovim)</a>
+    <br>
+    Typefaces:
+    <a href="https://practicaltypography.com/charter.html" style="font-family: Charter, serif;">Charter</a>,
+    <a href="https://www.ibm.com/plex/" style="font-family: 'IBM Plex Mono', monospace;">IBM Plex Mono</a>
+    <br>
+    字体：
+    <a href="https://github.com/TrionesType/zhuque" style="font-family: 'Zhuque Fangsong', serif;">朱雀仿宋</a>
+    <a href="https://github.com/lxgw/LxgwWenKaiTC" style="font-family: 'LXGW WenKai TC', serif;">落霞文楷传承</a>
+</p>
+
+<h2></h2>
+
+<p style="color: var(--color-muted);">Shared to the few who truly cares about me, yeah, including myself.</p>

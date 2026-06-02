@@ -1,0 +1,13 @@
+.post-date {
+    font-size: 0.85rem;
+    color: var(--color-muted);
+    margin: 0.15rem 0 1.5rem 0;
+}
+
+/* under_line for headers */
+h1,
+h2 {
+    border-bottom: 2px solid var(--color-rule);
+    padding-bottom: 0.35rem;
+    margin-bottom: 1rem;
+}

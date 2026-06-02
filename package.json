@@ -1,0 +1,32 @@
+{
+  "name": "pages",
+  "version": "1.0.0",
+  "description": "1. maintain github pages     - not going to be easy     - next step we need a conversion from md to html     - or we might want to use hugo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "eleventy",
+    "start": "eleventy --serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zhou-Xuanyu/zhou-xuanyu.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/Zhou-Xuanyu/zhou-xuanyu.github.io/issues"
+  },
+  "homepage": "https://github.com/Zhou-Xuanyu/zhou-xuanyu.github.io#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.5",
+    "markdown-it-anchor": "^9.2.0"
+  },
+  "dependencies": {
+    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.2",
+    "highlight.js": "^11.11.1",
+    "markdown-it-pangu-pro": "github:Zhou-Xuanyu/markdown-it-pangu-pro"
+  }
+}
