@@ -324,8 +324,7 @@ pre {
 /* fenced code blocks: no wrap, horizontal scroll */
 pre {
     overflow-x: auto;
-    counter-reset: line-number;
-    padding: 0.75em 0;
+    padding: 0.75em 1em;
     border-radius: 3px;
 }
 
@@ -336,25 +335,6 @@ pre > code {
     padding: 0;
     background: none;
     border-radius: 0;
-}
-
-/* each line injected by the inline script */
-pre code .line {
-    display: block;
-    counter-increment: line-number;
-    padding-right: 1.5em;
-}
-
-pre code .line::before {
-    content: counter(line-number);
-    display: inline-block;
-    width: 2.5em;
-    text-align: right;
-    margin-right: 1.2em;
-    padding-right: 0.6em;
-    border-right: 1px solid var(--color-rule);
-    color: var(--color-muted);
-    user-select: none;
 }
 
 /* =========================================
