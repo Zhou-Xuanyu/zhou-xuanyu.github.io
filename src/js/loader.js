@@ -8,6 +8,3 @@ Promise.all([
 ]).then(() => {
     loader?.classList.add("hidden");
 });
-
-// safety net: hide after 8s no matter what
-setTimeout(() => loader?.classList.add("hidden"), 8000);
