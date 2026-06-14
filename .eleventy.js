@@ -15,6 +15,17 @@ export default function(eleventyConfig) {
     const md = markdownIt({ html: true, typographer: true, highlight })
         .use(markdownItAnchor, { slugify })
         .use(markdownItPanguPro);
+
+    // suppress the space that softbreak (single newline) produces between CJK chars
+    const isCJK = (ch) => ch && /[一-鿿㐀-䶿豈-﫿぀-ゟ゠-ヿ]/.test(ch);
+    md.renderer.rules.softbreak = function(tokens, idx, options) {
+        const prev = tokens[idx - 1];
+        const next = tokens[idx + 1];
+        const prevChar = prev?.content?.slice(-1) ?? "";
+        const nextChar = next?.content?.[0] ?? "";
+        if (isCJK(prevChar) && isCJK(nextChar)) return "";
+        return options.breaks ? "<br>\n" : "\n";
+    };
     eleventyConfig.setLibrary("md", md);
 
     // transforms applied to rendered .md output
