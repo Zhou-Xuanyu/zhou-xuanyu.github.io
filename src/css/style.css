@@ -298,6 +298,7 @@ blockquote {
     font-size: 0.9rem;
     border-left: 2px solid var(--color-rule);
     padding: 0 1rem;
+    margin: 1em 0 1em 0;
     color: var(--color-muted);
 }
 
