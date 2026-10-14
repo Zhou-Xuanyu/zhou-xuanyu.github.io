@@ -1,5 +1,5 @@
 ---
-title: "I knew it leaks but not this much"
+title: "I knew it leaks but not that much"
 layout: layouts/thought.html
 extra_css: css/thoughts.css
 tags: thoughts
