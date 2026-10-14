@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/Zhou-Xuanyu/zhou-xuanyu.github.io#readme",
   "devDependencies": {
-    "@11ty/eleventy": "^3.1.5",
+    "@11ty/eleventy": "^0.6.0",
     "markdown-it-anchor": "^9.2.0"
   },
   "dependencies": {
